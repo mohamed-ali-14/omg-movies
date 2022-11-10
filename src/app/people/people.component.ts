@@ -40,7 +40,7 @@ export class PeopleComponent implements OnInit {
     localStorage.setItem("currentnump",this.currentnump.toString())
     this._AuthService.getpeople(num).subscribe({
       next: (data) => {
-        console.log(data.results);
+       
         this.peopleArr = data.results;
       },
     });

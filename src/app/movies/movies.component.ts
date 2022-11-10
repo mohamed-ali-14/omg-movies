@@ -44,7 +44,7 @@ export class MoviesComponent implements OnInit {
     localStorage.setItem("currentnum",this.currentnum.toString())
     this._AuthService.getmovie(num).subscribe({
       next: (data) => {
-        console.log(data.results);
+      
         this.moviesArr = data.results;
       },
     });

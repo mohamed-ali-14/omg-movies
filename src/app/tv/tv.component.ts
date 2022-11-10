@@ -38,7 +38,7 @@ export class TvComponent implements OnInit {
     localStorage.setItem("currentnumt",this.currentnumt.toString())
     this._AuthService.gettv(num).subscribe({
       next: (data) => {
-        console.log(data.results);
+       
         this.tvsArr = data.results;
       },
     });

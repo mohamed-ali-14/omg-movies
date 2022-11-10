@@ -66,8 +66,7 @@ this.moviesArr=data.results
   getTvs() {
     this._AuthService.getTrnding('tv').subscribe({
       next: (data) => {
-        console.log(data.results);
-
+     
         this.tvs = data.results.slice(0,10);;
       },
     });
@@ -75,7 +74,7 @@ this.moviesArr=data.results
   getPeople() {
     this._AuthService.getTrnding('person').subscribe({
       next: (data) => {
-        console.log(data.results);
+       
 
         this.peoples = data.results.slice(0,10);;
       },

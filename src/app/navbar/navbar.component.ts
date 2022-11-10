@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
     window.addEventListener('resize', () => {
      this.offset=window.innerWidth
      
-      console.log(this.offset);
+     
      if(this.offset < 768){
       this.display=true
      }else{
