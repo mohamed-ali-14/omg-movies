@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
 
 
   imgSrc:string="https://image.tmdb.org/t/p/w500";
-  vector:string="../../assets/1.jpg"
+  vector:string="assets/1.jpg"
   movies: any[] = [];
   moviesArr: any[] = [];
   tvs: any[] = [];
