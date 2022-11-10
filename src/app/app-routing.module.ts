@@ -17,7 +17,7 @@ import { TvComponent } from './tv/tv.component';
 import { TvdetailComponent } from './tvdetail/tvdetail.component';
 
 const routes: Routes = [
-  {path:"" ,redirectTo:"home",pathMatch:"full"},
+  {path:"" ,redirectTo:"main",pathMatch:"full"},
   {path:"home",canActivate:[AuthGuard], component:HomeComponent},
   {path:"main", component:MainComponent},
   {path:"about",canActivate:[AuthGuard], component:AboutComponent},
