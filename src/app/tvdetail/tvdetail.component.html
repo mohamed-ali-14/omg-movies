@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="row py-4">
+<div class="col-md-4 ">
+
+  
+<img class="w-100" [src]="imgSrc+tvobj.poster_path" alt="">
+
+
+</div>
+<div class="col-md-8">
+  <h2 class="px-2">{{tvobj.original_name}}</h2>
+  <p class="text-muted px-2">{{tvobj.title}}</p>
+  <span *ngFor="let x of tvobj.genres" class="d-inline-block m-2 "> <p class="p-2 bg-info rounded-pill">{{x.name}}</p></span>
+  <p class="px-2">Vote : {{tvobj.vote_average}}</p>
+  <p class="px-2">Vote count : {{tvobj.vote_count}}</p>
+  <p class="px-2">Number Of Episodes: {{tvobj.number_of_episodes}}</p>
+  <p class="px-2">Number Of Seasons: {{tvobj.number_of_seasons}}</p>
+  <p class="px-2 text-muted"> {{tvobj.overview}}</p>
+  <span class="px-2 m-2 netflix bg-info"><a  [href]="tvobj.homepage">   Watch  </a></span>
+</div>
+
+</div> </div>

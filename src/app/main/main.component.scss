@@ -1,0 +1,31 @@
+
+
+header{
+  background-image: url("../../assets/wallpaperflare.com_wallpaper\ \(10\).jpg");
+  background-attachment:fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display:flex;
+  align-items: flex-end;
+  position: relative;
+}
+.btn{
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.titel{
+  position: absolute;
+  top:10%;
+  left: 10%;
+
+}
+.btns{
+  position: absolute;
+  top:10%;
+  right: 10%;
+
+}

@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-md py-2 ">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/main">Noxe</a>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="/home" *ngIf="islogin">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="/movies" *ngIf="islogin">Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="/tv" *ngIf="islogin">Tvshowe</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link " aria-current="page"routerLink="/people"  *ngIf="islogin">People</a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="/about" *ngIf="islogin">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="/network" *ngIf="islogin">Network</a>
+        </li>
+       
+      </ul>
+      
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+       
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" ><i class="fa-brands fa-facebook"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" ><i class="fa-brands fa-spotify"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" ><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" ><i class="fa-brands fa-youtube"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="register" *ngIf="!islogin">register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" routerLink="/login" *ngIf="!islogin" >Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " aria-current="page"  *ngIf="islogin" (click)="logout()">Logout</a>
+  </li>
+  <li><form class="d-flex" role="search">
+    <input class="form-control ms-1  " (keyup)="sendSearch($event)"  (value)="search" type="text" placeholder="Search" aria-label="Search">
+
+  </form></li>
+      </ul>
+    </div>
+    
+  <div *ngIf="display" class="nav-item">
+    <form class="d-flex" role="search">
+   <input class="form-control ms-0  " (keyup)="sendSearch($event)"  (value)="search" type="text" placeholder="Search" aria-label="Search">
+
+ </form></div>
+    <div *ngIf="display" class="dropdown black nav-item">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+        <i class="fa-solid fa-list-ul"></i>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item"routerLink="/home" *ngIf="islogin">Home</a></li>
+        <li><a class="dropdown-item"  routerLink="/movies" *ngIf="islogin">Movies</a></li>
+        <li><a class="dropdown-item" routerLink="/tv" *ngIf="islogin">Tvshowe</a></li>
+        <li><a class="dropdown-item"routerLink="/people"  *ngIf="islogin">People</a></li>
+        <li><a class="dropdown-item"   routerLink="/about" *ngIf="islogin">About</a></li>
+        <li><a class="dropdown-item" routerLink="/network" *ngIf="islogin">Network</a></li>
+        <li><a class="dropdown-item"routerLink="register" *ngIf="!islogin">register</a></li>
+        <li><a class="dropdown-item"  routerLink="/login" *ngIf="!islogin" >Login</a></li>
+        <li><a class="dropdown-item" *ngIf="islogin" (click)="logout()">Logout</a></li>
+      </ul>
+    </div></div>
+
+</nav>

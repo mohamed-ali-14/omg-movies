@@ -1,0 +1,49 @@
+
+<div class="container">
+  <nav aria-label="Page navigation example" class=" d-flex justify-content-center" >
+    <ul class="pagination">
+      <li class="page-item" (click)="prev()">
+        <a class="page-link"  aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item"(click)="movies(currentnum)"><a class="page-link" >{{currentnum}}</a></li>
+      <li class="page-item"(click)="num2Fun()"><a class="page-link" >{{num2}}</a></li>
+      <li class="page-item"(click)="num3Fun()"><a class="page-link" >{{num3}}</a></li>
+      <li class="page-item" (click)="next()">
+        <a class="page-link" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+<div class="row g-2">
+  <div class="col-md-4 col-sm-6 col-sx-12 col-lg-3 col-xl-2" *ngFor="let movie of moviesArr|search:newSearch">
+    <a [routerLink]="['/movie',movie.id]"><img class="w-100"  [src]="imgSrc + movie.poster_path" alt="">
+    <p>{{movie.original_title}}</p></a>
+
+  </div>
+</div>
+
+
+
+
+
+<nav aria-label="Page navigation example" class=" d-flex justify-content-center" >
+  <ul class="pagination">
+    <li class="page-item" (click)="prev()">
+      <a class="page-link"  aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"(click)="movies(currentnum)"><a class="page-link" >{{currentnum}}</a></li>
+    <li class="page-item"(click)="num2Fun()"><a class="page-link" >{{num2}}</a></li>
+    <li class="page-item"(click)="num2Fun()"><a class="page-link" >{{num3}}</a></li>
+    <li class="page-item" (click)="next()">
+      <a class="page-link" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav></div>

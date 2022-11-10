@@ -1,0 +1,28 @@
+
+<div class="container" ><h2>Log In</h2>
+<form [formGroup]="loginform" (ngSubmit)="login(loginform)">
+ 
+  <label for="email"> EMAIL</label>
+  <input type="text" class="form-control" id="email" formControlName="email" />
+  <div class="errors" *ngIf="loginform.get('email')?.errors && loginform.get('email')?.touched">
+    <p *ngIf="loginform.get('email')?.errors?.['required']" > EMAIL IS REQUIRED </p>
+    <P *ngIf="loginform.get('email')?.errors?.['email']"> NOT MATCH</P>
+  </div>
+  <br />
+  <label for="password"> PASSWORD</label>
+  <input
+    type="text"
+    class="form-control"
+    id="password"
+    formControlName="password"
+  />
+  <div class="errors" *ngIf="loginform.get('password')?.errors && loginform.get('password')?.touched">
+    <p *ngIf="loginform.get('password')?.errors?.['required']" > password IS REQUIRED </p>
+    <P *ngIf="loginform.get('password')?.errors?.['pattern']"> 8 CHARACTER </P>
+  </div>
+ 
+<br>
+  <button class="btn btn-info" [disabled]="loginform.invalid">Log in</button>
+  <p class="text-center text-warning">{{logerror}}</p>
+</form></div>
+

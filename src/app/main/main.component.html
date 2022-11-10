@@ -1,0 +1,20 @@
+
+ 
+<header>
+ <h1 class="titel"> Welcom <br> To Our<br> Site </h1>
+ <div class="btns">
+<button class="btn btn-info  py-2 my-2 d-block" routerLink="/login">login</button>
+<button class="btn btn-info py-2 my-2 d-block" routerLink="/register">register</button></div>
+<div class="container"> 
+    
+
+  <owl-carousel-o [options]="customOptions">
+
+  <ng-container *ngFor="let slide of moviesArr">
+    <ng-template carouselSlide [id]="slide.id">
+      <img [src]="imgSrc+slide.poster_path" >
+    </ng-template>
+  </ng-container>
+
+</owl-carousel-o></div>
+</header>

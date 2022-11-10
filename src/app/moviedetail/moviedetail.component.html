@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="row py-4">
+<div class="col-md-4 ">
+<img class="w-100" [src]="imgSrc+movieobj.poster_path" alt="">
+
+
+</div>
+<div class="col-md-8">
+  <h2 class="px-2">{{movieobj.original_title}}</h2>
+  <p class="text-muted px-2">{{movieobj.title}}</p>
+  <span *ngFor="let x of movieobj.genres" class="d-inline-block m-2 "> <p class="p-2 bg-info rounded-pill">{{x.name}}</p></span>
+  <p class="px-2">Vote : {{movieobj.vote_average}}</p>
+  <p class="px-2">Vote count : {{movieobj.vote_count}}</p>
+  <p class="px-2">Release date: {{movieobj.release_date}}</p>
+  <p class="px-2 text-muted"> {{movieobj.overview}}</p>
+  <span class="px-2 m-2 netflix bg-info"><a  [href]="movieobj.homepage">   Watch  </a></span>
+</div>
+
+</div> </div>

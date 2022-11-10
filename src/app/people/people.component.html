@@ -1,0 +1,49 @@
+<div class="container">
+  
+  <nav aria-label="Page navigation example" class=" d-flex justify-content-center" >
+    <ul class="pagination">
+      <li class="page-item" (click)="prev()">
+        <a class="page-link"  aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item"(click)="people(currentnump)"><a class="page-link" >{{currentnump}}</a></li>
+      <li class="page-item"(click)="num2pFun()"><a class="page-link" >{{num2p}}</a></li>
+      <li class="page-item"(click)="num3pFun()"><a class="page-link" >{{num3p}}</a></li>
+      <li class="page-item" (click)="next()">
+        <a class="page-link" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="row g-2">
+    <div class="col-md-4 col-sm-6 col-sx-12 col-lg-3 col-xl-2" *ngFor="let person of peopleArr|searchp:newSearch">
+      <a [routerLink]="['/person',person.id]"><img class="w-100"   [src]="person.profile_path?imgSrc + person.profile_path:vector" alt="">
+      <p>{{person.name}}</p></a>
+  
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  <nav aria-label="Page navigation example" class=" d-flex justify-content-center" >
+    <ul class="pagination">
+      <li class="page-item" (click)="prev()">
+        <a class="page-link"  aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item"(click)="people(currentnump)"><a class="page-link" >{{currentnump}}</a></li>
+      <li class="page-item"(click)="num2pFun()"><a class="page-link" >{{num2p}}</a></li>
+      <li class="page-item"(click)="num3pFun()"><a class="page-link" >{{num3p}}</a></li>
+      <li class="page-item" (click)="next()">
+        <a class="page-link" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav></div>

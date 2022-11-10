@@ -1,0 +1,5 @@
+<app-navbar *ngIf="nav" ></app-navbar>
+<div  class="to-top" (click)="scrollToTop()" *ngIf="windowScrolled " id="up"class="position-fixed d-flex justify-content-center align-items-center"><i class="fa-solid fa-angles-up"></i></div>
+<router-outlet></router-outlet>
+
+<app-footer *ngIf="nav"></app-footer>
