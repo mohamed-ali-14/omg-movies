@@ -18,7 +18,7 @@
 
 <div class="container">
   <div class="row  py-3">
-    <div class="words col-md-4 col-sm-3 py-3">
+    <div class="words col-md-4 col-sm-6 col-sx-12 py-3">
       <div class="brd1"></div>
       
         <h2 class="py-2">Trending <br />Movies<br />To Watch Now</h2>
@@ -43,7 +43,7 @@
     </div>
   </div>
   <div class="row  py-3">
-    <div class="words col-md-4 py-3">
+    <div class="words col-md-4 col-sm-6  col-sx-12 py-3">
       <div class="brd1"></div>
       
         <h2 class="py-2">Trending <br />Tvs<br />To Watch Now</h2>
@@ -51,7 +51,7 @@
         <p class="text-muted">most watched Tvs by day</p>
         <div class="brd2"></div>
     </div>
-    <div class="col-md-2" *ngFor="let tv of tvs">
+    <div class="col-md-4 col-sm-6 col-sx-12 col-lg-3 col-xl-2" *ngFor="let tv of tvs">
       <a [routerLink]='["/tv",tv.id]'>
       <div class="item position-relative">
         <img
@@ -68,7 +68,7 @@
     </div>
   </div>
   <div class="row  py-3">
-    <div class="words col-md-4 py-3">
+    <div class="words col-md-4 col-sm-6  col-sx-12 py-3">
       <div class="brd1"></div>
       
         <h2 class="py-2" >Trending <br />Actors<br />To Watch Now</h2>
@@ -77,7 +77,7 @@
     
         <div class="brd2"></div>
     </div>
-    <div class="col-md-2" *ngFor="let person of peoples">
+    <div class="col-md-4 col-sm-6 col-sx-12 col-lg-3 col-xl-2" *ngFor="let person of peoples">
       <a [routerLink]='["/person",person.id]'>
       <div class="item position-relative">
         <img
