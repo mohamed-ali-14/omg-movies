@@ -21,7 +21,11 @@ export class NavbarComponent implements OnInit {
     private router: Router,
     private _AuthService: AuthService,
     private _SearchService: SearchService
-  ) {   this.router.events.subscribe(e => {
+  ) { 
+    if(localStorage.getItem("nav") != null ){
+      this.nav=localStorage.getItem("nav")
+    }
+    this.router.events.subscribe(e => {
     if (e instanceof NavigationStart) {
       this.name = e.url
       if (this.name == "/movies" ||this.name == "/tv" ||this.name == "/people"  ){
