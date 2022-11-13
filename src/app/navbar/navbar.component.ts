@@ -13,8 +13,8 @@ export class NavbarComponent implements OnInit {
   search: any;
 
   offset: number = 1
-  display = false
-  nav:any;
+  display :any= false
+  nav:any =false;
   name:string=""
   constructor(
 
@@ -23,17 +23,28 @@ export class NavbarComponent implements OnInit {
     private _SearchService: SearchService
   ) { 
     if(localStorage.getItem("nav") != null ){
-      this.nav=localStorage.getItem("nav")
+      
+      var bar :any = localStorage.getItem("nav")
+      this.nav= (/true/i).test(bar) 
     }
+    if(localStorage.getItem("display") != null ){
+      var dis :any = localStorage.getItem("display")
+      this.display= (/true/i).test(dis) 
+    }
+
+
+
     this.router.events.subscribe(e => {
     if (e instanceof NavigationStart) {
       this.name = e.url
       if (this.name == "/movies" ||this.name == "/tv" ||this.name == "/people"  ){
 
         this.nav = true
+        localStorage.setItem("nav",this.nav)
 
       } else {
         this.nav = false
+        localStorage.setItem("nav",this.nav)
       }
     }
   });
@@ -58,8 +69,10 @@ export class NavbarComponent implements OnInit {
 
       if (this.offset < 768) {
         this.display = true
+        localStorage.setItem("display",this.display)
       } else {
         this.display = false
+        localStorage.setItem("display",this.display)
       }
     });
 
@@ -76,16 +89,5 @@ export class NavbarComponent implements OnInit {
   }
   
 
-  // this.router.events.subscribe(e => {
-  //   if (e instanceof NavigationStart) {
-  //     this.name = e.url
-  //     if (this.name == "/movie" ||this.name == "/tv" ||this.name == "/people"  ){
-
-  //       this.nav = false
-
-  //     } else {
-  //       this.nav = true
-  //     }
-  //   }
-  // });
+ 
 }
